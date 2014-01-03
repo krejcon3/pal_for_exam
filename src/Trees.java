@@ -1,3 +1,5 @@
+import nodes.BinaryNode;
+
 public class Trees {
 
     public static void binaryTreeInsert() {}
@@ -8,13 +10,49 @@ public class Trees {
 
     public static void binaryTreeDeleteNode() {}
 
-    public static void binaryTreeBalanceLeftRotation() {}
+    public static BinaryNode binaryTreeBalanceLeftRotation(BinaryNode root) {
+        if (root == null) {
+            return root;
+        }
+        BinaryNode p1 = root.right;
+        if (p1 == null) {
+            return root;
+        }
+        root.right = p1;
+        p1.left = root;
+        return p1;
+    }
 
-    public static void binaryTreeBalanceRightRotation() {}
+    public static BinaryNode binaryTreeBalanceRightRotation(BinaryNode root) {
+        if (root == null) {
+            return root;
+        }
+        BinaryNode p1 = root.right;
+        if (p1 == null) {
+            return root;
+        }
+        root.left = p1.right;
+        p1.right = root;
+        return p1;
+    }
 
-    public static void binaryTreeBalanceLeftRightRotation() {}
+    public static BinaryNode binaryTreeBalanceLeftRightRotation(BinaryNode root) {
+        BinaryNode p1 = root.left;
+        BinaryNode p2 = p1.right;
+        p2.right = root;
+        p1.right = p2.left;
+        p2.left = p1;
+        return p2;
+    }
 
-    public static void binaryTreeBalanceRightLeftRotation() {}
+    public static BinaryNode binaryTreeBalanceRightLeftRotation(BinaryNode root) {
+        BinaryNode p1 = root.right;
+        BinaryNode p2 = root.left;
+        p2.left = root;
+        p1.left = p2.right;
+        p2.right = p1;
+        return p2;
+    }
 
 
     public static void avlTreeInsert() {}
