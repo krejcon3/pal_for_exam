@@ -1,5 +1,7 @@
 import nodes.ChildsNode;
+import nodes.ParentNode;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Stack;
@@ -56,9 +58,41 @@ public class Graphs {
 
     public static void hamiltonianPath() {}
 
-    public static void union() {}
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static HashMap<Object, ParentNode> parentNodeHashMap = new HashMap<Object, ParentNode>();
 
-    public static void find() {}
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static boolean union(Object o1, Object o2) {
+        ParentNode a = find(o1);
+        ParentNode b = find(o2);
+
+        if (!a.content.equals(b.content)) {
+            a.parent = b;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static ParentNode find(Object o) {
+        ParentNode n;
+        if (parentNodeHashMap.containsKey(o)) {
+            n = parentNodeHashMap.get(o);
+            while (n.parent != null) {
+                n = n.parent;
+            }
+        } else {
+            n = new ParentNode(o);
+            parentNodeHashMap.put(o, n);
+        }
+        return n;
+    }
 
     public static void jarnik() {}
 
