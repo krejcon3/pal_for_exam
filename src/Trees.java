@@ -63,6 +63,17 @@ public class Trees {
 
     public static void avlTreeDeleteNode() {}
 
+    public static int avlTreeHeight(BinaryNode n) {
+        if (n != null) {
+            return 1 + Math.max(avlTreeHeight(n.left), avlTreeHeight(n.right));
+        }
+        return -1;
+    }
+
+    public static int avlTreeBAL(BinaryNode n) {
+        return avlTreeHeight(n.left) - avlTreeHeight(n.right);
+    }
+
     public static void avlTreeBalanceLeftRotation() {}
 
     public static void avlTreeBalanceRightRotation() {}
