@@ -10,6 +10,10 @@ public class Trees {
 
     public static void binaryTreeDeleteNode() {}
 
+
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static BinaryNode binaryTreeBalanceLeftRotation(BinaryNode root) {
         if (root == null) {
             return root;
@@ -23,6 +27,9 @@ public class Trees {
         return p1;
     }
 
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static BinaryNode binaryTreeBalanceRightRotation(BinaryNode root) {
         if (root == null) {
             return root;
@@ -36,6 +43,9 @@ public class Trees {
         return p1;
     }
 
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static BinaryNode binaryTreeBalanceLeftRightRotation(BinaryNode root) {
         BinaryNode p1 = root.left;
         BinaryNode p2 = p1.right;
@@ -45,6 +55,9 @@ public class Trees {
         return p2;
     }
 
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static BinaryNode binaryTreeBalanceRightLeftRotation(BinaryNode root) {
         BinaryNode p1 = root.right;
         BinaryNode p2 = root.left;
@@ -63,6 +76,9 @@ public class Trees {
 
     public static void avlTreeDeleteNode() {}
 
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static int avlTreeHeight(BinaryNode n) {
         if (n != null) {
             return 1 + Math.max(avlTreeHeight(n.left), avlTreeHeight(n.right));
@@ -70,17 +86,40 @@ public class Trees {
         return -1;
     }
 
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static int avlTreeBAL(BinaryNode n) {
         return avlTreeHeight(n.left) - avlTreeHeight(n.right);
     }
 
-    public static void avlTreeBalanceLeftRotation() {}
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static BinaryNode avlTreeBalanceLeftRotation(BinaryNode root) {
+        return binaryTreeBalanceLeftRotation(root);
+    }
 
-    public static void avlTreeBalanceRightRotation() {}
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static BinaryNode avlTreeBalanceRightRotation(BinaryNode root) {
+        return binaryTreeBalanceRightRotation(root);
+    }
 
-    public static void avlTreeBalanceLeftRightRotation() {}
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static BinaryNode avlTreeBalanceLeftRightRotation(BinaryNode root) {
+        return binaryTreeBalanceLeftRightRotation(root);
+    }
 
-    public static void avlTreeBalanceRightLeftRotation() {}
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static BinaryNode avlTreeBalanceRightLeftRotation(BinaryNode root) {
+        return binaryTreeBalanceRightLeftRotation(root);
+    }
 
 
     public static void weightedTreeInsert() {}
