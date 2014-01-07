@@ -130,13 +130,21 @@ public class Trees {
 
     public static void weightedTreeDeleteNode() {}
 
-    public static void weightedTreeBalanceLeftRotation() {}
+    public static BinaryNode weightedTreeBalanceLeftRotation(BinaryNode root) {
+        return binaryTreeBalanceLeftRotation(root);
+    }
 
-    public static void weightedTreeBalanceRightRotation() {}
+    public static BinaryNode weightedTreeBalanceRightRotation(BinaryNode root) {
+        return binaryTreeBalanceRightRotation(root);
+    }
 
-    public static void weightedTreeBalanceLeftRightRotation() {}
+    public static BinaryNode weightedTreeBalanceLeftRightRotation(BinaryNode root) {
+        return binaryTreeBalanceLeftRightRotation(root);
+    }
 
-    public static void weightedTreeBalanceRightLeftRotation() {}
+    public static BinaryNode weightedTreeBalanceRightLeftRotation(BinaryNode root) {
+        return binaryTreeBalanceRightLeftRotation(root);
+    }
 
 
     public static void redBlackTreeInsert() {}
@@ -169,14 +177,12 @@ public class Trees {
 
     public static void splayTreeInsert() {}
 
-    public static void splayTreeRotation() {}
 
+    public static void kdTreeInsert() {}
 
-    public static void kdPlusTreeInsert() {}
+    public static void kdTreeDelete() {}
 
-    public static void kdPlusTreeDelete() {}
-
-    public static void kdPlusTreeNearestNeighborSearch() {}
+    public static void kdTreeNearestNeighborSearch() {}
 
 
     public static void binaryTrieInsert() {}
