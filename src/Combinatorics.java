@@ -74,13 +74,56 @@ public class Combinatorics {
 
     public static void kSubsetLexSuccesor() {}
 
+
     public static void kSubsetLexRank() {}
 
     public static void kSubsetLexUnrank() {}
 
-    public static void permLexRank() {}
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static int permLexRank(int size, int[] permutation) {
+        int r = 0;
+        int[] p = permutation;
+        for (int j = 0; j < size; j++) {
+            r = r + (p[j] - 1) * (size - faktorial(size - (j + 1)));
+            for (int i = j + 1; j < size; j++) {
+                if (p[i] > p[j]) {
+                    p[i] = p[i] - 1;
+                }
+            }
+        }
+        return r;
+    }
 
-    public static void permLexUnrank() {}
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static int faktorial(int num) {
+        if (num == 1) {
+            return 1;
+        }
+        return num * faktorial(num - 1);
+    }
+
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static void permLexUnrank(int size, int rank) {
+        int[] p = new int[size];
+        p[size - 1] = 1;
+        int d;
+        for (int j = 0; j < size - 1; j++) {
+            d = (int)((rank % faktorial(j + 2)) / faktorial(j + 1));
+            rank = rank - d * faktorial(j);
+            p[size - (j + 1)] = d + 1;
+            for (int i = size - (j + 1) + 1; j < size; j++) {
+                if (p[i] > d) {
+                    p[i] = p[i] + 1;
+                }
+            }
+        }
+    }
 
     /**
      * @author Ondřej Krejčíř
