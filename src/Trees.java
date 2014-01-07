@@ -130,18 +130,30 @@ public class Trees {
 
     public static void weightedTreeDeleteNode() {}
 
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static BinaryNode weightedTreeBalanceLeftRotation(BinaryNode root) {
         return binaryTreeBalanceLeftRotation(root);
     }
 
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static BinaryNode weightedTreeBalanceRightRotation(BinaryNode root) {
         return binaryTreeBalanceRightRotation(root);
     }
 
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static BinaryNode weightedTreeBalanceLeftRightRotation(BinaryNode root) {
         return binaryTreeBalanceLeftRightRotation(root);
     }
 
+    /**
+     * @author Ondřej Krejčíř
+     */
     public static BinaryNode weightedTreeBalanceRightLeftRotation(BinaryNode root) {
         return binaryTreeBalanceRightLeftRotation(root);
     }

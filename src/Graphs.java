@@ -1,10 +1,6 @@
-import nodes.ChildsNode;
-import nodes.ParentNode;
+import nodes.*;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 public class Graphs {
 
@@ -98,5 +94,28 @@ public class Graphs {
 
     public static void boruvka() {}
 
-    public static void kruskal() {}
+    /**
+     * @author Ondřej Krejčíř
+     */
+    public static HashMap<Object, Node> kruskal(HashMap<Integer, Edge> edges, int maxEdgeCount) {
+        int edgeCount = 0;
+        HashMap<Object, Node> skeleton = new HashMap<Object, Node>();
+        for (int i = 0; i < edges.size(); i++) {
+            Node start = edges.get(i).start;
+            Node end = edges.get(0).end;
+            if (union(start, end)) {
+                if (!skeleton.containsKey(start.content)) {
+                    skeleton.put(start.content, start);
+                }
+                if (!skeleton.containsKey(end.content)) {
+                    skeleton.put(end.content, end);
+                }
+                edgeCount++;
+                if (edgeCount >= maxEdgeCount) {
+                    return skeleton;
+                }
+            }
+        }
+        return skeleton;
+    }
 }
