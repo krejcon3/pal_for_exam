@@ -14,5 +14,58 @@ public class Main {
         System.out.println("/**");
         System.out.println(" * @author Jack Smith");
         System.out.println(" */");
+
+        Heaps.BinaryHeapInsert(0);
+        Heaps.BinaryHeapInsert(3);
+        Heaps.BinaryHeapInsert(5);
+        Heaps.BinaryHeapInsert(1);
+        Heaps.BinaryHeapInsert(2);
+        Heaps.BinaryHeapInsert(0);
+        Heaps.BinaryHeapInsert(6);
+        Heaps.BinaryHeapInsert(0);
+        for (int i = 0; i < Heaps.binaryNextIndex; i++) {
+            System.out.print(Heaps.binaryHeap[i] + " ");
+        }
+        System.out.println();
+        Heaps.BinaryHeapDeleteMin();
+        for (int i = 0; i < Heaps.binaryNextIndex; i++) {
+            System.out.print(Heaps.binaryHeap[i] + " ");
+        }
+        System.out.println();
+        Heaps.BinaryHeapDeleteMin();
+        for (int i = 0; i < Heaps.binaryNextIndex; i++) {
+            System.out.print(Heaps.binaryHeap[i] + " ");
+        }
+        System.out.println();
+        Heaps.BinaryHeapDeleteMin();
+        for (int i = 0; i < Heaps.binaryNextIndex; i++) {
+            System.out.print(Heaps.binaryHeap[i] + " ");
+        }
+        System.out.println();
+        Heaps.BinaryHeapDeleteMin();
+        for (int i = 0; i < Heaps.binaryNextIndex; i++) {
+            System.out.print(Heaps.binaryHeap[i] + " ");
+        }
+        System.out.println();
+        Heaps.BinaryHeapDeleteMin();
+        for (int i = 0; i < Heaps.binaryNextIndex; i++) {
+            System.out.print(Heaps.binaryHeap[i] + " ");
+        }
+        System.out.println();
+        Heaps.BinaryHeapDeleteMin();
+        for (int i = 0; i < Heaps.binaryNextIndex; i++) {
+            System.out.print(Heaps.binaryHeap[i] + " ");
+        }
+        System.out.println();
+        Heaps.BinaryHeapDeleteMin();
+        for (int i = 0; i < Heaps.binaryNextIndex; i++) {
+            System.out.print(Heaps.binaryHeap[i] + " ");
+        }
+        System.out.println();
+        Heaps.BinaryHeapDeleteMin();
+        for (int i = 0; i < Heaps.binaryNextIndex; i++) {
+            System.out.print(Heaps.binaryHeap[i] + " ");
+        }
+        System.out.println();
     }
 }
