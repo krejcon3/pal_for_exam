@@ -128,26 +128,27 @@ public class Combinatorics {
     /**
      * @author Ondřej Krejčíř
      */
-    public static int[] getNextPermutation(int[] permutation) {
-        int minIndex = permutation.length - 1;
-        for (int i = permutation.length - 1; i > 0; i--) {
-            if (permutation[i] > permutation[i - 1]) {
-                for (int j = permutation.length - 1; j > i - 1; j--) {
-                    if (permutation[j] < permutation[minIndex]) {
-                        minIndex = j;
-                    }
-                }
-                permutation = swapOnArray(permutation, minIndex, i);
-                int start = i;
-                int end = permutation.length - 1;
-                while (start < end) {
-                    permutation = swapOnArray(permutation, start++, end--);
-                }
-                return permutation;
-            }
-        }
-        return null;
-    }
+	public static int[] getNextPermutation(int[] permutation) {
+		int minIndex;
+		for (int i = permutation.length - 1; i > 0; i--) {
+			if (permutation[i] > permutation[i - 1]) {
+				minIndex = i;
+				for (int j = permutation.length - 1; j > i - 1; j--) {
+					if (permutation[j] < permutation[minIndex] && permutation[i - 1] < permutation[j]) {
+						minIndex = j;
+					}
+				}
+				permutation = swapOnArray(permutation, minIndex, i - 1);
+				int start = i;
+				int end = permutation.length - 1;
+				while (start < end) {
+					permutation = swapOnArray(permutation, start++, end--);
+				}
+				return permutation;
+			}
+		}
+		return null;
+	}
 
     /**
      * @author Ondřej Krejčíř
